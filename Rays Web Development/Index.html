@@ -1,3 +1,5 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -11,6 +13,8 @@
 </head>
 
 <body>
+  {children}
+  <SpeedInsights />
 <!-- header -->
   <div class="banner">
     <h3 class="banner-text">Free Shipping USA & Canada</h3>
