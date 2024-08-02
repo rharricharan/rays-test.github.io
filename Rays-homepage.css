@@ -1,6 +1,19 @@
+html,
 body {
-    margin-top: 32px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    margin-top: 0;
     background-color: #FFF4E7;
+}
+
+a {
+    text-decoration-line: none;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
 }
 
 .page-wrapper {
@@ -22,7 +35,6 @@ body {
     display: flex;
     position: relative;
     margin: 0;
-    margin-top: -36px;
     padding-top: 12px;
     padding-bottom: 12px;
 }
@@ -159,20 +171,22 @@ h3 {
 
 .about-container {
     display: block;
-    margin-left: 48px;
-    margin-right: 48px;
     margin-top: 124px;
+    height: 80vh;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center;
 }
 
 .about-section {
-    height: 80vh;
-    width: 100%;
+    height: 100%;
+    width: 100vw;
+    margin-right: 48px;
+    margin-left: 48px;
     display: flex;
-    background-color: antiquewhite;
+    box-sizing: border-box;
+    flex-direction: row;
     border-radius: 12px;
-    overflow: hidden;
     align-content: center;
     justify-content: center;
 }
@@ -182,6 +196,7 @@ h3 {
     height: 100%;
     background-image: url('Assets/Group 559.svg');
     background-size: cover;
+    box-sizing: border-box;
     background-repeat: no-repeat;
     background-position: top;
     border-radius: 12px;
@@ -192,14 +207,17 @@ h3 {
     width: 100%;
     height: 100%;
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: left;
-    margin: 0 54px 54px 54px;
+    margin-top: 48px;
+    margin-left: 48px;
+    margin-right: 48px;
 }
 
 .about-heading, .about-text, .about-cta {
-    margin: 0 0 32px 0;
+    margin: 0 0 32px 32px;
 }
 
 .about-heading {
@@ -215,7 +233,7 @@ h3 {
 .about-text {
     color: #6C4322;
     font-family: "Satoshi", sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 300;
     line-height: 140%;
     letter-spacing: -1.28px;
@@ -268,6 +286,7 @@ h3 {
 
 .sm-title-about {
     display: flex;
+    margin-left: 48px;
     margin-bottom: 32px;
     align-items: center;
     gap: 12px;
@@ -343,7 +362,21 @@ h3 {
 
 /* slider and animation */
 
+.feat-container-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-left: 36px;
+    margin-top: 124px;
+    width: 100%;
+    align-items: start;
+    justify-content: start;
+}
+
 .feat-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    margin-top: 0;
     height: 600px;
     overflow: hidden;
 }
@@ -379,6 +412,7 @@ h3 {
 .slider {
     display: flex;
     gap: 12px;
+    margin-right: 36px;
     scroll-snap-type: x mandatory;
     height: 640px;
     overflow-x: auto;
@@ -413,6 +447,27 @@ h3 {
 
 .prod-title {
     margin-bottom: 72px;
+}
+
+.hat,
+.bag,
+.shirt {
+    background-size: calc(100%);
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    width: 850px;
+    height: 600px;
+    border-radius: 48px;
+    transition: all 0.3s ease;
+}
+
+.hat:hover,
+.bag:hover,
+.shirt:hover {
+    background-size: calc(100% + 10%);
 }
 
 .hat {
@@ -494,9 +549,20 @@ h3 {
 
 .prod-container {
     display: flex;
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
     align-items: stretch;
     flex-direction: row;
     gap: 12px;
+}
+
+.hat-container,
+.bag-container {
+    padding: 32px;
+    justify-content: space-between;
+    display: flex;
+    align-items: last baseline;
 }
 
 /* Start seperate product */
@@ -676,12 +742,21 @@ h3 {
 }
 
 footer {
-    margin-top: 147px;
+    margin-top: 100px;
     padding-left: 48px;
     padding-bottom: 48px;
 }
 
 @media only screen and (max-width: 768px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        margin-top: 0;
+    }
     
     .page-wrapper {
         width: 100vw;
@@ -691,6 +766,7 @@ footer {
 
     .banner {
         width: 100vw;
+        margin-top: 0;
         margin-right: 0;
         margin-left: 0;
     }
@@ -718,30 +794,23 @@ footer {
         flex-direction: column;
         margin-left: 0;
         margin-right: 0;
-        height: 100%;
-    }
-
-    .hat {
-        width: auto;
         height: auto;
     }
 
+    .hat,
+    .bag,
+    .shirt {
+        width: 100%;
+        height: 600px;
+        /* Set fixed height for mobile */
+    }
+
     .hat-container {
-        height: 100%;
+        height: 400px;
     }
 
     .bag-container {
-        height: 100%;
-    }
-
-    .bag {
-        width: 100%;
-        height: 200px;
-    }
-
-    .shirt {
-        width: 100%;
-        height: 200px;
+        height: 400px;
     }
 
     .logo {
@@ -764,7 +833,7 @@ footer {
         font-weight: 400;
         font-size: 20px;
         margin: 0;
-        text-align: center;
+        text-align: left;
         line-height: 140%;
         color: #582f0e;
         letter-spacing: -0.5px;
@@ -799,6 +868,7 @@ footer {
 
     .about-section {
         display: flex;
+        width: 100%;
         flex-direction: column;
         background-color: antiquewhite;
         border-radius: 12px;
@@ -914,11 +984,10 @@ footer {
         width: 100%;
         justify-content: center;
         align-items: center;
+        padding-top: 0;
         margin-top: 0;
         margin-left: 0;
         margin-right: 0;
-        padding-left: 12px;
-        padding-right: 12px;
         overflow: hidden;
     }
 
@@ -953,6 +1022,8 @@ footer {
     .slider {
         display: flex;
         gap: 12px;
+        margin-left: 36px;
+        padding-right: 36px;
         scroll-snap-type: x mandatory;
         height: 600px;
         overflow-x: auto;
@@ -968,15 +1039,25 @@ footer {
         place-items: center;
     }
 
-    .footer {
-        margin-left: 0;
+    footer {
+        margin-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
+        align-items: center;
     }
 
     .footer-txt {
-        margin-left: 0;
+        margin: 0;
+        text-align: center;
+        font-size: 12px;
     }
 
-
+    .footer-container {
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 /* Updated last */
